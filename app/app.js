@@ -35,6 +35,9 @@ db.once("open", () => {
 });
 
 // Mongo Schemas
+const usersSchema = require("./schemas/users");
+const costSchema = require("./schemas/costs");
+
 const Users = mongoose.model('Users', usersSchema);
 const Costs = mongoose.model('Costs', costSchema);
 
