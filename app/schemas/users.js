@@ -7,6 +7,7 @@ Dev2 name: Shirel Bitan
 Dev2 ID: 209322395
  */
 
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const usersSchema = new Schema({
@@ -15,3 +16,5 @@ const usersSchema = new Schema({
     last_name: String,
     birthday: Date
 });
+
+module.exports = usersSchema;
