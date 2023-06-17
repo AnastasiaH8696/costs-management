@@ -1,0 +1,17 @@
+{
+  "name": "cost-management",
+  "version": "1.0.0",
+  "description": "Cost Management Express.js App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anastasia Hamandritov & Shirel Bitan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "jade": "^1.11.0",
+    "mongoose": "^7.3.0"
+  }
+}
