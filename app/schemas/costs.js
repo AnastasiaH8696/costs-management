@@ -7,6 +7,7 @@ Dev2 name: Shirel Bitan
 Dev2 ID: 209322395
  */
 
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const costSchema = new Schema({
@@ -19,3 +20,5 @@ const costSchema = new Schema({
     category: String,
     sum: Number
 });
+
+module.exports = costSchema;
