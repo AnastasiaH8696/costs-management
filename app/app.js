@@ -46,17 +46,17 @@ const addCostRouter = require("./routes/addcost");
 const createReportRouter = require("./routes/createReport");
 const reportRouter = require("./routes/report");
 const aboutRouter = require("./routes/about");
+const addUserRouter = require("./routes/adduser");
 
 app.use("/", indexRouter);
 app.use("/addcost", addCostRouter);
 app.use("/create-report", createReportRouter);
 app.use("/report", reportRouter);
 app.use("/about", aboutRouter);
+app.use("/adduser", addUserRouter);
 
 // Other configurations
-app.use(express.json);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

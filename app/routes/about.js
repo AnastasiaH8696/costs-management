@@ -12,6 +12,7 @@ const router = express.Router();
 
 /* GET About developers info */
 router.get('/', function(req, res, next) {
+  
   const data = [
     {
       firstname: 'Anastasia',

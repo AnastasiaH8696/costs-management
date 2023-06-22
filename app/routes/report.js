@@ -30,7 +30,11 @@ router.get("/", async (req, res) => {
     }
 
     if (month < 1 || month > 12) {
-      throw new Error("The month is invalid");
+      throw new Error("Invalid Month. Must be between 1-12");
+    }
+
+    if (year < 1923 || year > 2023) {
+      throw new Error("Invalid Year. Must be between 1923-2023");
     }
 
     costs
@@ -52,7 +56,7 @@ router.get("/", async (req, res) => {
       });
   } catch (err) {
     console.error(err);
-    res.status(500).send("Error retrieving report, the error: " + err);
+    res.status(400).send("Error retrieving report, the error: " + err);
   }
 });
 
