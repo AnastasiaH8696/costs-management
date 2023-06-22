@@ -10,38 +10,50 @@ Dev2 ID: 209322395
 const express = require("express");
 const router = express.Router();
 const costs = require("../schemas/costs");
+const categories = require("../consts/categories");
 
 router.get("/", async (req, res) => {
   try {
-    const userId = req.params.user_id;
-    const month = req.params.month;
-    const year = req.params.year;
+    const userId = Number(req.query.userId);
+    const month = Number(req.query.month);
+    const year = Number(req.query.year);
+    const report = {};
 
+    //Initialize response json
+    categories.forEach(category => {
+      report[category] = [];
+    });
+
+    //Validations
     if (!userId || !month || !year) {
       throw new Error("One ore more of the required parameters are empty");
     }
 
-    if (!Number.isInteger(month) || month < 1 || month > 12) {
+    if (month < 1 || month > 12) {
       throw new Error("The month is invalid");
     }
 
-    if (!Number.isInteger(year)) {
-      throw new Error("The year is invalid");
-    }
-
-    costs.find({ user_id: userId })
+    costs
+      .find({ user_id: userId, year: year, month: month }) //Find specific user
       .then((items) => {
-        console.log("Items found:", items);
+        items.forEach((item) => {
+          const { category, day, description, sum, year } = item;
+          const data = {
+            day: day,
+            description: description,
+            sum: sum
+          }
+          report[category].push(data);
+        });
+        res.json(report);
       })
       .catch((error) => {
         console.error("Error finding items:", error);
       });
   } catch (err) {
     console.error(err);
-    res.status(500).send("Error retrieving report");
+    res.status(500).send("Error retrieving report, the error: " + err);
   }
-
-  res.send("Success");
 });
 
 module.exports = router;
