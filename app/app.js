@@ -48,11 +48,13 @@ app.set("views", __dirname + "/views");
 // Routes
 const indexRouter = require("./routes/index");
 const addCostRouter = require("./routes/addcost");
+const createReportRouter = require("./routes/createReport");
 const reportRouter = require("./routes/report");
 const aboutRouter = require("./routes/about");
 
 app.use("/", indexRouter);
 app.use("/addcost", addCostRouter);
+app.use("/create-report", createReportRouter);
 app.use("/report", reportRouter);
 app.use("/about", aboutRouter);
 
@@ -62,7 +64,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
+
 
 module.exports = { app, mongoose };

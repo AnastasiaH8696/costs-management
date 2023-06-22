@@ -10,6 +10,11 @@ Dev2 ID: 209322395
 const express = require('express');
 const router = express.Router();
 
+/* GET render addCost view */
+router.get('/', function(req, res, next) {
+  res.render('addcost');
+});
+
 /* POST new cost item */
 router.post('/', function(req, res, next) {
   // TODO

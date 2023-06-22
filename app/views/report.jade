@@ -1,0 +1,22 @@
+//-
+//- ----- Developers info -----
+//- Dev1 name: Anastasia Hamandritov
+//- Dev1 ID: 321924433
+//- Dev2 name: Shirel Bitan
+//- Dev2 ID: 209322395
+
+doctype html
+html
+  head
+    title Create a Report
+  body
+    h1 Create a Report
+    form(action="/report", method="get")
+      label(for="user-id") User ID:
+      input(type="text", name="user-id", id="user-id")
+      label(for="month") Month:
+      input(type="text", name="month", id="month")
+      label(for="year") Year:
+      input(type="text", name="year", id="year")
+      button(type="submit") Submit
+
