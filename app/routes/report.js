@@ -29,7 +29,13 @@ router.get("/", async (req, res) => {
       throw new Error("The year is invalid");
     }
 
-    
+    costs.find({ user_id: userId })
+      .then((items) => {
+        console.log("Items found:", items);
+      })
+      .catch((error) => {
+        console.error("Error finding items:", error);
+      });
   } catch (err) {
     console.error(err);
     res.status(500).send("Error retrieving report");
