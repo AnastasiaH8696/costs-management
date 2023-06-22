@@ -17,4 +17,6 @@ const usersSchema = new Schema({
     birthday: Date
 });
 
+const User = mongoose.model('users', usersSchema);
+
 module.exports = usersSchema;
