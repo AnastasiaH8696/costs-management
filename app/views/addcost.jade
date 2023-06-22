@@ -4,3 +4,21 @@ html
     title Cost Management App
   body
     h1 Add Cost
+    form(action="/addcost", method="post")
+      label(for="id") ID:
+      input(type="text", name="id", id="id")
+      label(for="user_id") User ID:
+      input(type="text", name="user_id", id="user_id")
+      label(for="year") Year:
+      input(type="text", name="year", id="year")
+      label(for="month") Month:
+      input(type="text", name="month", id="month")
+      label(for="day") Day:
+      input(type="text", name="day", id="day")
+      label(for="day") Description:
+      input(type="text", name="description", id="description")
+      label(for="day") Category:
+      input(type="text", name="category", id="category")
+      label(for="day") Sum:
+      input(type="text", name="sum", id="sum")
+      button(type="submit") Add cost

@@ -15,18 +15,20 @@ const db = mongoose.connection;
 const bodyParser = require("body-parser");
 
 // Mongo Connection
-const connectionString = 'mongodb+srv://nasthg96:fET8ns9HlgYnFt6B@cost-management-db.nmlivoc.mongodb.net/costs-db';
+const connectionString =
+  "mongodb+srv://nasthg96:fET8ns9HlgYnFt6B@cost-management-db.nmlivoc.mongodb.net/costs-db";
 
-mongoose.connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => {
-  console.log('Connected to MongoDB');
-})
-.catch((error) => {
-  console.error('Error connecting to MongoDB:', error);
-});
+mongoose
+  .connect(connectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+  });
 
 // Mongo Error handling
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -54,7 +56,7 @@ app.use("/about", aboutRouter);
 // Other configurations
 app.use(express.json);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
