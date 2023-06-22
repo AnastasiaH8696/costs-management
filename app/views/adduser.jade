@@ -1,0 +1,24 @@
+//-
+//- ----- Developers info -----
+//- Dev1 name: Anastasia Hamandritov
+//- Dev1 ID: 321924433
+//- Dev2 name: Shirel Bitan
+//- Dev2 ID: 209322395
+
+doctype html
+html
+  head
+    title Cost Management App
+  body
+    h1 Create a Report
+    form(action="/adduser", method="post")
+      label(for="id") User ID:
+      input(type="text", name="id", id="id")
+      label(for="month") First Name:
+      input(type="text", name="first_name", id="first_name")
+      label(for="year") Last Name:
+      input(type="text", name="last_name", id="last_name")
+      label(for="year") Birthday :
+      input(type="date", name="birthday", id="birthday")
+      button(type="submit") Submit
+
