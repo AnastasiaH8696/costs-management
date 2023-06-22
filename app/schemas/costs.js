@@ -21,6 +21,6 @@ const costSchema = new Schema({
   sum: Number,
 });
 
-const Cost = mongoose.model('Cost', costSchema);
+const Cost = mongoose.model("costs", costSchema);
 
 module.exports = Cost;
