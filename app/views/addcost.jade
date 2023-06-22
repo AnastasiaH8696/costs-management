@@ -7,7 +7,7 @@ html
     form(action="/addcost", method="post")
       label(for="id") ID:
       input(type="text", name="id", id="id")
-      label(for="user-id") User ID:
+      label(for="user_id") User ID:
       input(type="text", name="user_id", id="user_id")
       label(for="year") Year:
       input(type="text", name="year", id="year")
@@ -21,5 +21,4 @@ html
       input(type="text", name="category", id="category")
       label(for="day") Sum:
       input(type="text", name="sum", id="sum")
-      button(type="add-cost") Add cost
-
+      button(type="submit") Add cost

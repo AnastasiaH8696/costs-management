@@ -56,7 +56,7 @@ app.use("/about", aboutRouter);
 // Other configurations
 app.use(express.json);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
