@@ -11,14 +11,14 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const costSchema = new Schema({
-    id: Number,
-    user_id: Number,
-    year: Number,
-    month: Number,
-    day: Number,
-    description: String,
-    category: String,
-    sum: Number
+  id: Number,
+  user_id: Number,
+  year: Number,
+  month: Number,
+  day: Number,
+  description: String,
+  category: String,
+  sum: Number,
 });
 
 module.exports = costSchema;
