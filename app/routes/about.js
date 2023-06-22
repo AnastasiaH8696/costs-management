@@ -10,9 +10,24 @@ Dev2 ID: 209322395
 const express = require('express');
 const router = express.Router();
 
-/* GET About info */
+/* GET About developers info */
 router.get('/', function(req, res, next) {
-  // TODO
+  const data = [
+    {
+      firstname: 'Anastasia',
+      lastname: 'Hamandritov',
+      id: 321924433,
+      email: 'nasthg96@gmail.com',
+    },
+    {
+      firstname: 'Shirel',
+      lastname: 'Bitan',
+      id: 209322395,
+      email: 'Shirelbitan277@gmail.com',
+    },
+  ];
+
+  res.json(data);
 });
 
 module.exports = router;

@@ -5,11 +5,19 @@
 //- Dev2 name: Shirel Bitan
 //- Dev2 ID: 209322395
 
-
 doctype html
 html
   head
-    title= title
+    title Cost Management App
   body
-      h1= title
-      p Welcome to #{title}
+    h1 Cost Management App
+    button(onclick="redirectTo('addcost')") Add Cost
+    button(onclick="redirectTo('create-report')") Create Report
+    button(onclick="redirectTo('about')") About
+
+  script.
+    function redirectTo(view) {
+      window.location.href = '/' + view;
+    }
+
+

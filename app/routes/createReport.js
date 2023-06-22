@@ -10,9 +10,10 @@ Dev2 ID: 209322395
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+/* GET Cost Report Form */
+router.get('/', async (req, res, next) => {
+  res.render('report');
 });
+
 
 module.exports = router;

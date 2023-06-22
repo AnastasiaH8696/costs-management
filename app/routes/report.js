@@ -9,10 +9,21 @@ Dev2 ID: 209322395
 
 const express = require('express');
 const router = express.Router();
+const costs = require('../schemas/costs');
 
-/* GET Cost Report */
-router.get('/', function(req, res, next) {
-  // TODO
-});
+
+router.get("/", async (req, res) => {
+  /*try {
+    const userId = req.params.user_id;
+    const month = req.params.month;
+    const year = req.params.year;
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error retrieving report");
+  }*/
+
+  res.send('Success');
+ });
+
 
 module.exports = router;
