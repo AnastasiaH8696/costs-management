@@ -15,7 +15,7 @@ const db = mongoose.connection;
 const bodyParser = require("body-parser");
 
 // Mongo Connection
-const connectionString = 'mongodb+srv://nasthg96:fET8ns9HlgYnFt6B@cost-management-db.nmlivoc.mongodb.net/';
+const connectionString = 'mongodb+srv://nasthg96:fET8ns9HlgYnFt6B@cost-management-db.nmlivoc.mongodb.net/costs-db';
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
@@ -33,13 +33,6 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 db.once("open", () => {
   console.log("Connected to MongoDB");
 });
-
-// Mongo Schemas
-const usersSchema = require("./schemas/users");
-const costSchema = require("./schemas/costs");
-
-const Users = mongoose.model('Users', usersSchema);
-const Costs = mongoose.model('Costs', costSchema);
 
 // view engine setup
 app.set("view engine", "jade");
@@ -66,6 +59,5 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
 
 module.exports = { app, mongoose };
