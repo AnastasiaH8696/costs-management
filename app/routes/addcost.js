@@ -51,7 +51,7 @@ router.post("/", async (req, res, next) => {
     //Adding new cost
     const newCost = new costs({id, user_id, year, month, day, description, category, sum});
     await newCost.save();
-    res.send("Cost item added successfully");
+    res.json(newCost);
     
   } catch (error) {
     console.error("Error adding cost item:", error);
